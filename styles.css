@@ -77,12 +77,10 @@ img {
     align-items: center;
 }
 
-.logo {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    letter-spacing: 0.05em;
-    font-weight: 600;
-    font-style: italic;
+.logo-img {
+    height: 60px;
+    width: auto;
+    display: block;
 }
 
 .nav-link {

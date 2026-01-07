@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gilded Crumb | Minimalist Desserts</title>
+    <title>Stick With It | Minimalist Desserts</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -94,12 +94,10 @@
             align-items: center;
         }
 
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            letter-spacing: 0.05em;
-            font-weight: 600;
-            font-style: italic;
+        .logo-img {
+            height: 60px;
+            width: auto;
+            display: block;
         }
 
         .nav-link {
@@ -348,7 +346,9 @@
 <body>
     <header class="site-header">
         <div class="container header-content">
-            <a href="#" class="logo">Gilded Crumb</a>
+            <a href="#" class="logo-link">
+                <img src="assets/logo.png" alt="Stick With It" class="logo-img">
+            </a>
             <nav class="site-nav">
                 <a href="#menu" class="nav-link">Menu</a>
                 <a href="#contact" class="nav-link">Contact</a>
@@ -436,10 +436,21 @@
             <div class="container">
                 <div class="contact-box">
                     <h2 class="contact-title">Visit Us</h2>
-                    <p class="contact-text">123 Confectionary Lane, Sweet City</p>
-                    <p class="contact-text">Open Daily: 10am - 9pm</p>
+                    <p class="contact-text">
+                        <a href="https://maps.app.goo.gl/DTcaXW2gYhM1CiKQ9" target="_blank"
+                            style="text-decoration: underline;">
+                            Urban Chowk, Rajpath Rangoli Rd,<br>
+                            Thaltej, Ahmedabad, Gujarat 380058
+                        </a>
+                    </p>
+                    <p class="contact-text">Open Daily: 7:00 PM - 12:30 AM</p>
+                    <div class="contact-actions">
+                        <a href="https://maps.app.goo.gl/DTcaXW2gYhM1CiKQ9" target="_blank" class="btn btn-primary"
+                            style="margin-bottom: 1rem;">Get Directions</a>
+                    </div>
+                    <p class="contact-text">Stick With It: <a href="tel:+917874777086">+91 78747 77086</a></p>
                     <div class="social-links">
-                        <span>@GildedCrumb</span>
+                        <a href="https://www.instagram.com/stickwithit.in/" target="_blank">@stickwithit.in</a>
                     </div>
                 </div>
             </div>
@@ -448,9 +459,23 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 Gilded Crumb. All rights reserved.</p>
+            <p>&copy; 2026 Stick With It. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Universal Maps Link Logic
+        document.addEventListener('DOMContentLoaded', function () {
+            var isIOS = /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent) && !window.MSStream;
+            var directionsBtn = document.getElementById('directions-btn');
+
+            if (isIOS && directionsBtn) {
+                // Open in Apple Maps on iOS devices
+                // Using q=Name and ll=Coordinates
+                directionsBtn.href = "http://maps.apple.com/?q=Stick+With+It&ll=23.0364297,72.4811852";
+            }
+        });
+    </script>
 </body>
 
 </html>
