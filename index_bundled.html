@@ -204,76 +204,50 @@
             font-style: italic;
         }
 
-        .category-group {
-            margin-bottom: 6rem;
-        }
-
-        .category-title {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-            display: inline-block;
-            font-style: italic;
-        }
-
-        .product-grid {
+        .menu-images-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            gap: 2rem;
+            align-items: start;
+            margin-bottom: 3rem;
         }
 
-        .product-card {
-            background: var(--white);
-            border: 1px solid transparent;
-            transition: all 0.4s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
-            border-color: var(--border-color);
-        }
-
-        .card-image-wrapper {
-            overflow: hidden;
-            aspect-ratio: 4/5;
-        }
-
-        .product-image {
+        .menu-page-img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .product-card:hover .product-image {
-            transform: scale(1.05);
+        .menu-page-img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
         }
 
-        .card-content {
-            padding: 1.5rem 0;
-            text-align: center;
+        .menu-image-link {
+            display: block;
+            border-radius: 8px;
         }
 
-        .product-title {
-            font-size: 1.25rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
+        .menu-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
-        .product-desc {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            padding: 0 1rem;
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-color);
+            border-color: var(--text-color);
         }
 
-        .product-price {
-            font-family: var(--font-heading);
-            font-style: italic;
-            font-size: 1.1rem;
-            color: var(--accent-color);
+        .btn-secondary:hover {
+            background: var(--text-color);
+            color: var(--white);
         }
 
         /* Contact & Footer */
@@ -335,10 +309,6 @@
             .hero-text-overlay {
                 padding: 2rem;
             }
-
-            .product-grid {
-                gap: 2rem;
-            }
         }
     </style>
 </head>
@@ -370,64 +340,23 @@
 
         <section id="menu" class="menu-section">
             <div class="container">
-                <h2 class="section-title">Our Collections</h2>
+                <h2 class="section-title">Our Menu</h2>
 
-                <div class="category-group">
-                    <h3 class="category-title">Sweet Delights</h3>
-                    <div class="product-grid">
-                        <article class="product-card">
-                            <div class="card-image-wrapper">
-                                <img src="assets/pancakes.png" alt="Mini Pancakes" class="product-image">
-                            </div>
-                            <div class="card-content">
-                                <h4 class="product-title">Mini Pancakes</h4>
-                                <p class="product-desc">Fluffy golden bites drizzled with premium chocolate and
-                                    strawberries.</p>
-                                <span class="product-price">$8.50</span>
-                            </div>
-                        </article>
-
-                        <article class="product-card">
-                            <div class="card-image-wrapper">
-                                <img src="assets/waffles.png" alt="Waffle Sticks" class="product-image">
-                            </div>
-                            <div class="card-content">
-                                <h4 class="product-title">Waffle Sticks</h4>
-                                <p class="product-desc">Belgian-style waffles on a stick, dusted with sugar and
-                                    elegance.</p>
-                                <span class="product-price">$6.00</span>
-                            </div>
-                        </article>
-                    </div>
+                <div class="menu-images-container">
+                    <a href="assets/menu_page_1.png" target="_blank" class="menu-image-link">
+                        <img src="assets/menu_page_1.png" alt="Menu Page 1" class="menu-page-img" loading="lazy">
+                    </a>
+                    <a href="assets/menu_page_2.png" target="_blank" class="menu-image-link">
+                        <img src="assets/menu_page_2.png" alt="Menu Page 2" class="menu-page-img" loading="lazy">
+                    </a>
+                    <a href="assets/menu_page_3.png" target="_blank" class="menu-image-link">
+                        <img src="assets/menu_page_3.png" alt="Menu Page 3" class="menu-page-img" loading="lazy">
+                    </a>
                 </div>
 
-                <div class="category-group">
-                    <h3 class="category-title">Savory Bites</h3>
-                    <div class="product-grid">
-                        <article class="product-card">
-                            <div class="card-image-wrapper">
-                                <img src="assets/fries.png" alt="Potato Spirals" class="product-image">
-                            </div>
-                            <div class="card-content">
-                                <h4 class="product-title">Potato Spirals</h4>
-                                <p class="product-desc">Crispy, golden spiral-cut potatoes seasoned to perfection.</p>
-                                <span class="product-price">$5.50</span>
-                            </div>
-                        </article>
-
-                        <article class="product-card">
-                            <!-- Placeholder for regular fries if needed, or reuse fries image for now -->
-                            <div class="card-image-wrapper">
-                                <img src="assets/fries.png" alt="Golden Fries" class="product-image"
-                                    style="transform: scaleX(-1);"> <!-- Mirrored for variety -->
-                            </div>
-                            <div class="card-content">
-                                <h4 class="product-title">Golden Fries</h4>
-                                <p class="product-desc">Classic shoestring fries, roughly salted and served hot.</p>
-                                <span class="product-price">$4.50</span>
-                            </div>
-                        </article>
-                    </div>
+                <div class="menu-actions">
+                    <a href="assets/menu.pdf" target="_blank" class="btn btn-primary">View Full Screen</a>
+                    <a href="assets/menu.pdf" download class="btn btn-secondary">Download Menu</a>
                 </div>
             </div>
         </section>
@@ -476,6 +405,7 @@
             }
         });
     </script>
+
 </body>
 
 </html>
